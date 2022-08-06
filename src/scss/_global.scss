@@ -4,6 +4,109 @@
     padding: 0;
 }
 
+:root {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: $c_txt_main;
+    text-align: center;
+}
+
 body {
-    background-color: $test-color;
+    background-color: $c_bg_body;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    overflow: hidden;
+
+    #top-pattern {
+        position: absolute;
+        transform: translate(-45%, -50%);
+    }
+
+    #bottom-pattern {
+        position: absolute;
+        transform: translate(45%, 50%);
+    }
+}
+
+main {
+    width: calc(100% - 50px);
+    z-index: 1;
+    max-width: 350px;
+    min-width: 250px;
+
+    .hero {
+        width: 100%;
+        height: 140px;
+        background-image: url(../img/bg-pattern-card.svg);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        position: relative;
+
+        .profile-picture {
+            position: absolute;
+            bottom: 0;
+            transform: translate(-50%, 50%);
+            border-radius: 50%;
+            border: 5px solid $c_bg_card;
+        }
+    }
+
+    .informations-wrapper {
+        background-color: $c_bg_card;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        h1 {
+            font-size: 1rem;
+            font-weight: 700;
+            padding-top: 4rem;
+            margin-bottom: 0.4rem;
+
+            span {
+                margin-left: 0.3rem;
+                color: $c_txt_secondary;
+            }
+        }
+
+        .location {
+            color: $c_txt_secondary;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 1.3rem 2rem;
+            border-top: 1px solid $c_bar;
+
+            .stat-item {
+                flex: 1;
+
+                .number {
+                    font-weight: 700;
+                    margin-bottom: 0.2rem;
+                }
+    
+                .topic {
+                    font-size: 0.6rem;
+                    letter-spacing: 0.08rem;
+                }
+            }
+        }
+    }
 }
